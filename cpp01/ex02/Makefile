@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = brain
 CC=c++
 FLAGS= -Wall -Wextra -Werror  -std=c++98
 SRSC= main.cpp

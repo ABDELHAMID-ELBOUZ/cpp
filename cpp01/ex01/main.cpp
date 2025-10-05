@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/27 09:50:48 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/09/30 14:08:31 by aelbouz          ###   ########.fr       */
+/*   Created: 2025/09/27 09:53:06 by aelbouz           #+#    #+#             */
+/*   Updated: 2025/10/01 11:12:25 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void    randomChump( std::string name )
+int main()
 {
-    Zombie Zombie(name);
-    Zombie.announce();
+   Zombie *horde = zombieHorde(5,"aelbouz");
+   if (!horde)
+      std::cout << "faild to creat a hord\n";
+   int i = 0;
+   while (i < 5)
+   {
+      horde->announce();
+      i++;
+   }
+   delete[] (horde);
 }

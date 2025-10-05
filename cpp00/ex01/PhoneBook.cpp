@@ -6,11 +6,17 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 11:32:25 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/09/25 10:45:26 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/09/30 11:16:24 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+	index = 0;
+	count = 0;
+}
 
 void PhoneBook::AddContact()
 {
@@ -50,8 +56,8 @@ void PhoneBook::AddContact()
 		if (!std::getline(std::cin, darkest))
 			return;
 	}
-	index = 0;
-	count = 0;
+	// index = 0;
+	// count = 0;
 	contacts[index].setContact(first,last,nick,phone,darkest);
 	index = (index + 1) % 8;
 	if (count < 8)
@@ -62,7 +68,7 @@ void PhoneBook::AddContact()
 std::string PhoneBook::field(std::string str)
 {
 	if (str.length() >= 10)
-		return (str.substr(0,10));
+		return (str.substr(0,9));
 	return (str);
 }
 

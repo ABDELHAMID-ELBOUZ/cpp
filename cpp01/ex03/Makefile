@@ -1,7 +1,7 @@
 NAME = megaphone
 CC=c++
 FLAGS= -Wall -Wextra -Werror  -std=c++98
-SRSC= main.cpp
+SRSC= HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
 $(NAME):$(OBJS)

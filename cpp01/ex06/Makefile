@@ -1,7 +1,7 @@
-NAME = megaphone
+NAME = harlFilter
 CC=c++
 FLAGS= -Wall -Wextra -Werror  -std=c++98
-SRSC= main.cpp
+SRSC= main.cpp Harl.cpp
 OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
 $(NAME):$(OBJS)

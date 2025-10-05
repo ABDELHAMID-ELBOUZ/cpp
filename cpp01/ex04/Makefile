@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = replace
 CC=c++
 FLAGS= -Wall -Wextra -Werror  -std=c++98
 SRSC= main.cpp

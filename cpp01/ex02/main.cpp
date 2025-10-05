@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/21 11:21:00 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/09/30 11:12:07 by aelbouz          ###   ########.fr       */
+/*   Created: 2025/10/01 11:14:34 by aelbouz           #+#    #+#             */
+/*   Updated: 2025/10/01 11:22:14 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
-#include "Contact.hpp"
 #include <iostream>
-#include <iomanip>
+#include <string>
 
-class PhoneBook
+int main()
 {
-	public:
-		void AddContact();
-		void SearchContact();
-		PhoneBook();
-	private:
-		Contact contacts[8];
-		int count;
-		int index;
-		std::string field(std::string str);
-};
+    std::string string = "HI THIS IS BRAIN";
+    std::string *stringPTR = &string;
+    std::string &stringREF = string;
+    
+    std::cout << &string << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
 
-#endif
+    std::cout << string << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
+}

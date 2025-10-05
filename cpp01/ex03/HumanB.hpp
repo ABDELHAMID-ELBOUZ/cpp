@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/27 09:50:48 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/09/30 14:08:31 by aelbouz          ###   ########.fr       */
+/*   Created: 2025/10/01 13:47:12 by aelbouz           #+#    #+#             */
+/*   Updated: 2025/10/02 14:56:30 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
-void    randomChump( std::string name )
+#include "Weapon.hpp"
+#include <iostream>
+
+class HumanB
 {
-    Zombie Zombie(name);
-    Zombie.announce();
-}
+private:
+    std::string name;
+    Weapon *weapon;
+public:
+    HumanB(const std::string &Name);
+    void setWeapon(Weapon &WeaponRef);
+    void attack() const;
+};
+
+#endif
