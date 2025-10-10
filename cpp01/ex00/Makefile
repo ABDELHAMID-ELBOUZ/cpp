@@ -1,15 +1,15 @@
 NAME = BraiiiiiiinnnzzzZ
-CC=c++
+C=c++
 FLAGS= -Wall -Wextra -Werror  -std=c++98
 SRSC= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
 $(NAME):$(OBJS)
-	$(CC) $(FLAGS) $^ -o $(NAME)
+	$(C) $(FLAGS) $^ -o $(NAME)
 %.o:%.cpp Zombie.hpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(C) $(FLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS)
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 re: fclean all

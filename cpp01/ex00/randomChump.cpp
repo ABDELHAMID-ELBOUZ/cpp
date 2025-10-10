@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 09:50:48 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/09/30 14:08:31 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/10/07 10:23:05 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void    randomChump( std::string name )
 {
-    Zombie Zombie(name);
-    Zombie.announce();
+    Zombie zombie(name);
+    zombie.announce();
 }

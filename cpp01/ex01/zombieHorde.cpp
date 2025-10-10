@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:16:15 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/10/01 11:12:11 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/10/07 10:32:08 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Zombie* zombieHorde(int N, std::string name)
 {
     if (N <= 0) {
         std::cout << "Error: Number of zombies must be positive" << std::endl;
-        return nullptr;
+        return NULL;
     }
 
     Zombie *horde = new Zombie[N];

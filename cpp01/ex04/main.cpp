@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 10:28:09 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/10/04 14:27:13 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/10/07 10:42:40 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int main(int ac, char **av)
             pos += s2.length();
         }
         out_File << line;
-
     }
     in_File.close();
     out_File.close();

@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 11:32:25 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/09/30 11:16:24 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/10/07 09:51:47 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,11 @@ void PhoneBook::AddContact()
 		if (!std::getline(std::cin, darkest))
 			return;
 	}
-	// index = 0;
-	// count = 0;
 	contacts[index].setContact(first,last,nick,phone,darkest);
 	index = (index + 1) % 8;
 	if (count < 8)
 		count++;
     std::cout << "✅ Contact added successfully!\n";
-}
-
-std::string PhoneBook::field(std::string str)
-{
-	if (str.length() >= 10)
-		return (str.substr(0,9));
-	return (str);
 }
 
 void PhoneBook::SearchContact()
@@ -91,9 +82,9 @@ void PhoneBook::SearchContact()
 		while (i < count)
 		{
         std::cout << std::setw(10) << i << "|"
-                  << std::setw(10) << field(contacts[i].GetFirstName()) << "|"
-                  << std::setw(10) << field(contacts[i].GetlastName()) << "|"
-                  << std::setw(10) << field(contacts[i].GetnickName()) << std::endl;
+                  << std::setw(10) << contacts[i].GetFirstName().substr(0,10) << "|"
+                  << std::setw(10) << contacts[i].GetlastName().substr(0,10)<< "|"
+                  << std::setw(10) << contacts[i].GetnickName().substr(0,10)<< std::endl;
 				  i++;
    		}
 	}
@@ -112,9 +103,9 @@ void PhoneBook::SearchContact()
 		return ;
 	}
 	Contact c = contacts[index];
-	std::cout << "First Name: " << c.GetFirstName() << "\n";
-    std::cout << "Last Name: " << c.GetlastName() << "\n";
-    std::cout << "Nickname: " << c.GetnickName() << "\n";
-    std::cout << "Phone Number: " << c.GetPhoneNumber() << "\n";
-    std::cout << "Darkest Secret: " << c.GetDarkest_secret() << "\n";
+	std::cout << "First Name: " << c.GetFirstName() << std::endl;
+    std::cout << "Last Name: " << c.GetlastName() << std::endl;
+    std::cout << "Nickname: " << c.GetnickName() << std::endl;
+    std::cout << "Phone Number: " << c.GetPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << c.GetDarkest_secret() << std::endl;
 }
