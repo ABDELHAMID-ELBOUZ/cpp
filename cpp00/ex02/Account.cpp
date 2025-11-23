@@ -90,7 +90,7 @@ Account::~Account()
 	std::cout
 	<< "index:" <<_accountIndex
 	<< ";amount:" << _amount
-	<< ":closed"<<std::endl;
+	<< ";closed"<<std::endl;
 }
 
 void Account::makeDeposit(int deposit)

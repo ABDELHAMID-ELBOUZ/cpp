@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 11:32:25 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/10/07 09:51:47 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/11/23 13:58:35 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ PhoneBook::PhoneBook()
 	count = 0;
 }
 
-void PhoneBook::AddContact()
+void PhoneBook::addContact()
 {
 	std::string first;
 	std::string last;
@@ -63,7 +63,7 @@ void PhoneBook::AddContact()
     std::cout << "✅ Contact added successfully!\n";
 }
 
-void PhoneBook::SearchContact()
+void PhoneBook::searchContact()
 {
 	int i = 0;
 	std::string input;
@@ -82,9 +82,9 @@ void PhoneBook::SearchContact()
 		while (i < count)
 		{
         std::cout << std::setw(10) << i << "|"
-                  << std::setw(10) << contacts[i].GetFirstName().substr(0,10) << "|"
-                  << std::setw(10) << contacts[i].GetlastName().substr(0,10)<< "|"
-                  << std::setw(10) << contacts[i].GetnickName().substr(0,10)<< std::endl;
+                  << std::setw(10) << contacts[i].getFirstName().substr(0,10) << "|"
+                  << std::setw(10) << contacts[i].getLastName().substr(0,10)<< "|"
+                  << std::setw(10) << contacts[i].getNickName().substr(0,10)<< std::endl;
 				  i++;
    		}
 	}
@@ -103,9 +103,9 @@ void PhoneBook::SearchContact()
 		return ;
 	}
 	Contact c = contacts[index];
-	std::cout << "First Name: " << c.GetFirstName() << std::endl;
-    std::cout << "Last Name: " << c.GetlastName() << std::endl;
-    std::cout << "Nickname: " << c.GetnickName() << std::endl;
-    std::cout << "Phone Number: " << c.GetPhoneNumber() << std::endl;
-    std::cout << "Darkest Secret: " << c.GetDarkest_secret() << std::endl;
+	std::cout << "First Name: " << c.getFirstName() << std::endl;
+    std::cout << "Last Name: " << c.getLastName() << std::endl;
+    std::cout << "Nickname: " << c.getNickName() << std::endl;
+    std::cout << "Phone Number: " << c.getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << c.getDarkestSecret() << std::endl;
 }

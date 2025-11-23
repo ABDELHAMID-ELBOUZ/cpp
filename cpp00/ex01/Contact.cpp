@@ -21,23 +21,23 @@ void Contact::setContact(std::string first_name,std::string last_name,std::strin
 	darkestsecret = darkest_secret;
 }
 
-std::string Contact::GetFirstName()
+std::string Contact::getFirstName()
 {
 		return (firstname);
 }
-std::string Contact::GetlastName()
+std::string Contact::getLastName()
 {
 	return (lastname);
 }
-std::string Contact::GetnickName()
+std::string Contact::getNickName()
 {
 	return (nickname);
 }
-std::string Contact::GetPhoneNumber()
+std::string Contact::getPhoneNumber()
 {
 	return (phonenumber);
 }
-std::string Contact::GetDarkest_secret()
+std::string Contact::getDarkestSecret()
 {
 	return (darkestsecret);
 }

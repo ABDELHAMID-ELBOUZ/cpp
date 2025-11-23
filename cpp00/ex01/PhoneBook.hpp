@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 11:21:00 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/10/07 09:50:52 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/11/23 13:58:04 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class PhoneBook
 {
 	public:
-		void AddContact();
-		void SearchContact();
+		void addContact();
+		void searchContact();
 		PhoneBook();
 	private:
 		Contact contacts[8];

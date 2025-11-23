@@ -22,10 +22,12 @@ int main()
 		if (!std::getline(std::cin, cmd))
 			return (1);
 		if (cmd == "ADD")
-			PhoneBook.AddContact();
+			PhoneBook.addContact();
 		if (cmd == "SEARCH")
-			PhoneBook.SearchContact();
+			PhoneBook.searchContact();
 		if (cmd == "EXIT")
-			exit(0);
+			return (0);
 	}
+
+	
 }

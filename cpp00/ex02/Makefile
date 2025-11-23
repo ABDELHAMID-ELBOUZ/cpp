@@ -1,6 +1,6 @@
 NAME = Account
 C=c++
-FLAGS= -Wall -Wextra -Werror  -std=c++98
+FLAGS= -Wall -Wextra -Werror -std=c++98
 SRSC= tests.cpp Account.cpp
 OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
