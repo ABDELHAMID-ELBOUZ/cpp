@@ -52,6 +52,6 @@ int main(int ac, char **av)
         }
         out_File << line;
     }
-    in_File.close();
-    out_File.close();
+    //in_File.close();
+    //out_File.close();
 }
