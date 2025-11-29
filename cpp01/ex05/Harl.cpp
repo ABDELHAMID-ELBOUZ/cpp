@@ -40,27 +40,15 @@ void Harl::complain(std::string level)
       &Harl::warning,
       &Harl::error
     };
-    int index = -1;
-    switch (level.length())
+    int i = 0;
+    while (i < 4)
     {
-    case 4:
-        if (level == "INFO")
-            index = 0;
-        break;
-    case 5:
-        if (level == "DEBUG")
-            index = 1;
-        else if (level == "ERROR")
-            index = 2;
-        break;
-    case 7:
-        if (level == "WARNING")
-            index = 3;
-    default:
-        break;
+        if (levels[i] == level)
+        {
+            (this->*functions[i])();
+            return ;
+        }
+        i++;
     }
-    if (index >= 0 && index < 4)
-        (this->*functions[index])();
-    else 
-        std::cout << "[INVALID] Unknown complaint level: " << level << std::endl;
+    std::cout << "[INVALID] Unknown complaint level: " << level << std::endl;
 }

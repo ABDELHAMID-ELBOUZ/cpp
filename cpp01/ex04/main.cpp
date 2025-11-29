@@ -44,7 +44,7 @@ int main(int ac, char **av)
         if (!in_File.eof() )
             line += "\n";
         size_t pos = 0;
-        while ((pos = line.find(s1, pos)) != std::string::npos) 
+        while (((pos = line.find(s1, pos)) != std::string::npos) && !s1.empty()) 
         {
             line.erase(pos, s1.length());
             line.insert(pos, s2);
@@ -52,6 +52,4 @@ int main(int ac, char **av)
         }
         out_File << line;
     }
-    //in_File.close();
-    //out_File.close();
 }
