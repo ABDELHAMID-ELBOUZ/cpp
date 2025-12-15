@@ -1,12 +1,12 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = Fixed
 C=c++
 FLAGS= -Wall -Wextra -Werror  -std=c++98
-SRSC= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRSC= main.cpp Fixed.cpp
 OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
 $(NAME):$(OBJS)
 	$(C) $(FLAGS) $^ -o $(NAME)
-%.o:%.cpp Zombie.hpp
+%.o:%.cpp Fixed.hpp
 	$(C) $(FLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS)
