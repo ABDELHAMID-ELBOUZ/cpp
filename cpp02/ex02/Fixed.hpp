@@ -19,7 +19,7 @@
 class Fixed
 {
 private:
-    int                 rawBits;
+    int                 integer;
     static const int    fractionalBits = 8;
 
 public:
@@ -32,7 +32,7 @@ public:
     float toFloat(void) const;
     int   toInt(void) const;
     int  getRawBits(void) const;
-    void setRawBits(int const raw);
+    void seRawBits(int const raw);
 	Fixed operator+(const Fixed& obj);
     Fixed operator*(const Fixed& obj);
     Fixed operator-(const Fixed& obj);
