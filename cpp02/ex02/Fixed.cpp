@@ -59,7 +59,7 @@ int Fixed::toInt(void) const
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getinteger member function called" << std::endl;
+    std::cout << "getRawBits member function called" << std::endl;
     return integer;
 }
 
