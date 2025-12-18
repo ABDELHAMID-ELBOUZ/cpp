@@ -6,13 +6,18 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:51:38 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/17 15:39:42 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/18 10:59:04 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name):Name(name),hitPoints(10),energyPoints(10),attackDamage(10)
+ClapTrap::ClapTrap()
+{
+    std::cout << "ClapTrap " << Name << "Default Constructor called." << std::endl ;
+}
+
+ClapTrap::ClapTrap(const std::string &name):Name(name),hitPoints(10),energyPoints(10),attackDamage(0)
 {
     std::cout << "ClapTrap " << Name << " Constructor called." << std::endl ;
 }

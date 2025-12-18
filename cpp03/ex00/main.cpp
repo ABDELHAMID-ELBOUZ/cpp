@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:51:33 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/17 11:38:40 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/18 11:26:36 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int main()
 {
-    ClapTrap a("Alpha");
-
+    ClapTrap a("claptrap");
     a.attack("Target");
     a.takeDamage(3);
     a.beRepaired(5);
     a.takeDamage(20);
     a.attack("Enemy");
     a.beRepaired(5);
-
     return 0;
 }

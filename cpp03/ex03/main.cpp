@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:51:33 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/17 13:31:44 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/18 11:27:51 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 int main()
 {
     std::cout << "---- Creating DiamondTrap ----" << std::endl;
-    DiamondTrap d("DI4M");
-
+    DiamondTrap d("DiamondTrap");
     std::cout << "---- Actions ----" << std::endl;
-    d.attack("Boss");
+    d.attack("target");
     d.takeDamage(25);
     d.beRepaired(10);
     d.whoAmI();
-
     std::cout << "---- Destruction ----" << std::endl;
     return 0;
 }

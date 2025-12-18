@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 10:51:33 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/17 13:21:19 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/18 11:27:01 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int main()
 {
-    std::cout << "---- Creating ClapTrap ----" << std::endl;
-    ClapTrap a("CL4P");
     std::cout << "---- Creating ScavTrap ----" << std::endl;
-    ScavTrap b("SC4V");
+    ScavTrap b("ScavTrap");
     std::cout << "---- Actions ----" << std::endl;
-    b.attack("Intruder");
+    b.attack("target");
     b.takeDamage(30);
     b.beRepaired(20);
     b.guardGate();

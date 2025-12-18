@@ -6,18 +6,23 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:18:20 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/17 13:19:51 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/18 10:59:58 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
+FragTrap::FragTrap()
 {
+    std::cout << "FragTrap " << Name << "Default Constructor called." << std::endl ;
+}
+
+FragTrap::FragTrap(const std::string& name) 
+{
+    Name = name;
     hitPoints = 100;
     energyPoints = 100;
     attackDamage = 30;
-
     std::cout << "FragTrap " << Name << " Constructor called." << std::endl ;
 }
 
@@ -29,9 +34,7 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
     if (this != &other)
-    {
         ClapTrap::operator=(other);
-    }
     std::cout << "FragTrap copy assignment operator called." << std::endl;
     return *this;
 }
