@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 11:44:01 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/18 11:02:58 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/20 14:34:35 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ ScavTrap::ScavTrap(const std::string& name)
     hitPoints = 100;
     energyPoints = 50;
     attackDamage = 20;
-
     std::cout << "ScavTrap " << Name << " Constructor called." << std::endl;
 }
 
