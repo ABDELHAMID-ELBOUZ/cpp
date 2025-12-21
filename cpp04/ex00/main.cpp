@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 10:10:04 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/19 12:13:01 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/21 11:19:32 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int main()
     std::cout << meta->getType() << std::endl;
     meta->makeSound();
     std::cout << j->getType() << std::endl;
-    i->makeSound();
-    std::cout << i->getType() << std::endl;
     j->makeSound();
+    std::cout << i->getType() << std::endl;
+    i->makeSound();
     delete meta;
     delete j;
     delete i;

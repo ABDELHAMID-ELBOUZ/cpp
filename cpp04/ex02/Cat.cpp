@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 10:08:47 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/19 10:45:45 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/21 11:52:39 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ Cat& Cat::operator=(const Cat& other)
     if (this != &other)
     {
         Animal::operator=(other);
-        delete brain;
-        brain = new Brain(*other.brain);
+        brain = other.brain;
     }
     return *this;
 }

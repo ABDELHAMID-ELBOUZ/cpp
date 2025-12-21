@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 10:10:04 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/19 12:29:46 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/21 11:29:38 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,9 @@ int main()
               << original.getBrain()->getIdea(0) << std::endl;
     std::cout << "Copy idea: "
               << copy.getBrain()->getIdea(0) << std::endl;
+    std::cout << "Original adress: "
+              << original.getBrain() << std::endl;
+    std::cout << "Copy adress: "
+              << copy.getBrain() << std::endl;
     return 0;
 }

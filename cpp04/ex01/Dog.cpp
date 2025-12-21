@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 10:02:09 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/19 10:46:08 by aelbouz          ###   ########.fr       */
+/*   Updated: 2025/12/21 11:31:47 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ Dog& Dog::operator=(const Dog& other)
     if (this != &other)
     {
         Animal::operator=(other);
-        delete brain;
-        brain = new Brain(*other.brain);
+        brain = other.brain;
     }
     return *this;
 }
