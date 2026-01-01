@@ -1,12 +1,12 @@
-NAME = PhoneBook
+NAME = Bureaucrat
 C=c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRSC= main.cpp PhoneBook.cpp Contact.cpp
+SRSC= main.cpp  Bureaucrat.cpp
 OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
 $(NAME):$(OBJS)
 	$(C) $(FLAGS) $^ -o $(NAME)
-%.o:%.cpp PhoneBook.hpp
+%.o:%.cpp Bureaucrat.hpp
 	$(C) $(FLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS)
