@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 10:05:43 by aelbouz           #+#    #+#             */
-/*   Updated: 2025/12/29 10:20:59 by aelbouz          ###   ########.fr       */
+/*   Updated: 2026/06/12 10:49:23 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 int main()
 {
     try
-    {
-        Bureaucrat b("Alice", 1);
-        b.incrementGrade();
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Exception caught: " << e.what() << std::endl;
-    }
+	{
+		Bureaucrat bob("Bob", 150);
+		// bob.incrementGrade();
+		bob.decrementGrade();
+		
+	}
+	catch(std::exception& e)
+	{
+        std::cout << "Exception: " << e.what() << std::endl;
+
+	}
+	
 }
