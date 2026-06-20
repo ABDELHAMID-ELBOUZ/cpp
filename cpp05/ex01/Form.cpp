@@ -1,23 +1,23 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : _name("Default Form"), _isSigned(false), _gradeToSign(150), _gradeToExec(150)
+Form::Form() : name("Default Form"), isSigned(false), gradeToSign(150), gradeToExec(150)
 {
 
 }
 
 Form::Form(const std::string& name, int gradeToSign, int gradeToExec) 
-    : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec) 
+    : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExec(gradeToExec) 
 {
-    if (_gradeToSign < 1 || _gradeToExec < 1)
+    if (gradeToSign < 1 || gradeToExec < 1)
         throw Form::GradeTooHighException();
-    if (_gradeToSign > 150 || _gradeToExec > 150)
+    if (gradeToSign > 150 || gradeToExec > 150)
         throw Form::GradeTooLowException();
     std::cout << "Form constructor called" << std::endl;
 }
 
 Form::Form(const Form& other) 
-    : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec)
+    : name(other.name), isSigned(other.isSigned), gradeToSign(other.gradeToSign), gradeToExec(other.gradeToExec)
 {
     std::cout << "Form copy constructor called " << std::endl;
 }
@@ -25,7 +25,7 @@ Form::Form(const Form& other)
 Form& Form::operator=(const Form& other) 
 {
     if (this != &other)
-        this->_isSigned = other._isSigned;
+        this->isSigned = other.isSigned;
     std::cout << "Form copy assignement called" << std::endl;
     return *this;
 }
@@ -37,26 +37,26 @@ Form::~Form()
 
 std::string Form::getName() const
 {
-	 return _name; 
+	 return name; 
 }
 bool Form::getIsSigned() const
 {
-	 return _isSigned; 
+	 return isSigned; 
 }
 int Form::getGradeToSign() const
 { 
-	return _gradeToSign; 
+	return gradeToSign; 
 }
 int Form::getGradeToExec() const
 { 
-	return _gradeToExec; 
+	return gradeToExec; 
 }
 
 void Form::beSigned(const Bureaucrat& bureaucrat) 
 {
-    if (bureaucrat.getGrade() > _gradeToSign) 
+    if (bureaucrat.getGrade() > gradeToSign) 
         throw Form::GradeTooLowException();
-    _isSigned = true;
+    isSigned = true;
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) 

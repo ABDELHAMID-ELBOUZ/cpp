@@ -6,7 +6,7 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 09:58:53 by aelbouz           #+#    #+#             */
-/*   Updated: 2026/06/15 11:16:55 by aelbouz          ###   ########.fr       */
+/*   Updated: 2026/06/16 08:21:45 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Bureaucrat
         ~Bureaucrat();
         Bureaucrat(const Bureaucrat& other);
         Bureaucrat& operator=(const Bureaucrat& other);
-        std::string getName();
+        std::string getName() const;
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();

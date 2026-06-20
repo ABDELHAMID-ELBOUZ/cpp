@@ -1,15 +1,25 @@
-NAME = PhoneBook
-C=c++
-FLAGS= -Wall -Wextra -Werror -g  -std=c++98
-SRSC= main.cpp PhoneBook.cpp Contact.cpp
-OBJS=$(SRSC:.cpp=.o)
-all:$(NAME)
-$(NAME):$(OBJS)
-	$(C) $(FLAGS) $^ -o $(NAME)
-%.o:%.cpp PhoneBook.hpp
-	$(C) $(FLAGS) -c $< -o $@
+NAME = intern
+CXX = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp Intern.cpp \
+       ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CXX) $(FLAGS) $^ -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(FLAGS) -c $< -o $@
+
 clean:
 	rm -f $(OBJS)
+
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean all
+
+.PHONY: all clean fclean re

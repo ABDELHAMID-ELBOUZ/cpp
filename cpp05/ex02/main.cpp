@@ -1,43 +1,59 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
-int main() {
-    std::cout << "--- Test 1: Form Creation Exceptions ---" << std::endl;
-    try {
-        Form invalidForm("Tax Fraud", 0, 50);
-    } catch (std::exception& e) {
-        std::cout << "Caught expected exception: " << e.what() << std::endl;
-    }
+int main()
+{
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
 
-    try {
-        Form invalidForm2("Tax Fraud 2", 151, 50);
-    } catch (std::exception& e) {
-        std::cout << "Caught expected exception: " << e.what() << std::endl;
-    }
+	std::cout << "--- Test 1: sign + execute succeed ---" << std::endl;
+	{
+		Bureaucrat boss("Hermes", 1);
+		ShrubberyCreationForm shrub("home");
 
-    std::cout << "\n--- Test 2: Successful Signing ---" << std::endl;
-    try {
-        Bureaucrat boss("Hermes Conrad", 10);
-        Form simpleForm("Permit A38", 20, 45);
+		boss.signForm(shrub);
+		boss.executeForm(shrub);
+	}
 
-        std::cout << simpleForm << std::endl;
-        boss.signForm(simpleForm);
-        std::cout << simpleForm << std::endl;
-    } catch (std::exception& e) {
-        std::cout << "Unexpected exception: " << e.what() << std::endl;
-    }
+	std::cout << "\n--- Test 2: can sign, cannot execute ---" << std::endl;
+	{
+		Bureaucrat midLevel("Fry", 72);
+		RobotomyRequestForm robo("Bender");
 
-    std::cout << "\n--- Test 3: Failed Signing ---" << std::endl;
-    try {
-        Bureaucrat intern("Philip J. Fry", 140);
-        Form topSecretForm("Classified Document", 5, 5);
+		midLevel.signForm(robo);    
+		midLevel.executeForm(robo); 
+	}
 
-        std::cout << topSecretForm << std::endl;
-        intern.signForm(topSecretForm);
-        std::cout << topSecretForm << std::endl;
-    } catch (std::exception& e) {
-        std::cout << "Unexpected crash exception: " << e.what() << std::endl;
-    }
+	std::cout << "\n--- Test 3: cannot sign at all ---" << std::endl;
+	{
+		Bureaucrat hmad("hmad", 140);
+		PresidentialPardonForm pardon("Bender");
 
-    return 0;
+		hmad.signForm(pardon);    
+		hmad.executeForm(pardon); 
+	}
+
+	std::cout << "\n--- Test 4: signed but executed by unauthorized grade ---" << std::endl;
+	{
+		Bureaucrat signer("Leela", 25);
+		Bureaucrat executor("Zapp", 10);
+		PresidentialPardonForm pardon("Nibbler");
+
+		signer.signForm(pardon);     
+		executor.executeForm(pardon);
+	}
+
+	std::cout << "\n--- Test 5: fully authorized executor ---" << std::endl;
+	{
+		Bureaucrat zaphod("Zaphod", 1);
+		PresidentialPardonForm pardon("Marvin");
+
+		zaphod.signForm(pardon);
+		zaphod.executeForm(pardon);
+	}
+
+	return 0;
 }
