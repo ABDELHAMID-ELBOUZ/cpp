@@ -6,13 +6,13 @@
 /*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 10:02:09 by aelbouz           #+#    #+#             */
-/*   Updated: 2026/06/12 11:24:49 by aelbouz          ###   ########.fr       */
+/*   Updated: 2026/07/13 14:17:08 by aelbouz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string Name, int Grade): name(Name), grade(Grade)
+Bureaucrat::Bureaucrat(const std::string& Name, int Grade): name(Name), grade(Grade)
 {
     if (grade > 150)
         throw GradeTooLowException();
@@ -39,12 +39,12 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
     return *this;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return grade;
 }
@@ -72,7 +72,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return "Grade Too Low";
 }
 
-std::ostream& operator<<( std::ostream &os,  Bureaucrat& b)
+std::ostream& operator<<( std::ostream &os, const Bureaucrat& b)
 {
     os << b.getName() << ", bureaucrat grade " << b.getGrade();
 	return os;
