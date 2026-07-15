@@ -9,50 +9,50 @@ int main()
 {
 	std::srand(static_cast<unsigned int>(std::time(NULL)));
 
-	std::cout << "--- Test 1: sign + execute succeed ---" << std::endl;
+	std::cout << "test 1" << std::endl;
 	{
-		Bureaucrat boss("Hermes", 1);
-		ShrubberyCreationForm shrub("home");
+		Bureaucrat Bureaucrat("Bureaucrat", 1);
+		ShrubberyCreationForm ShrubberyCreationForm("ShrubberyCreationForm");
 
-		boss.signForm(shrub);
-		boss.executeForm(shrub);
+		Bureaucrat.signForm(ShrubberyCreationForm);
+		Bureaucrat.executeForm(ShrubberyCreationForm);
 	}
 
-	std::cout << "\n--- Test 2: can sign, cannot execute ---" << std::endl;
+	std::cout << "test 2" << std::endl;
 	{
-		Bureaucrat midLevel("Fry", 72);
-		RobotomyRequestForm robo("Bender");
+		Bureaucrat Bureaucrat("Bureaucrat", 72);
+		RobotomyRequestForm RobotomyRequestForm("RobotomyRequestForm");
 
-		midLevel.signForm(robo);    
-		midLevel.executeForm(robo); 
+		Bureaucrat.signForm(RobotomyRequestForm);    
+		Bureaucrat.executeForm(RobotomyRequestForm); 
 	}
 
-	std::cout << "\n--- Test 3: cannot sign at all ---" << std::endl;
+	std::cout << "test 3" << std::endl;
 	{
-		Bureaucrat hmad("hmad", 140);
-		PresidentialPardonForm pardon("Bender");
+		Bureaucrat Bureaucrat("Bureaucrat", 140);
+		PresidentialPardonForm PresidentialPardonForm("PresidentialPardonForm");
 
-		hmad.signForm(pardon);    
-		hmad.executeForm(pardon); 
+		Bureaucrat.signForm(PresidentialPardonForm);    
+		Bureaucrat.executeForm(PresidentialPardonForm); 
 	}
 
-	std::cout << "\n--- Test 4: signed but executed by unauthorized grade ---" << std::endl;
+	std::cout << "test 4" << std::endl;
 	{
 		Bureaucrat signer("Leela", 25);
 		Bureaucrat executor("Zapp", 10);
-		PresidentialPardonForm pardon("Nibbler");
+		PresidentialPardonForm PresidentialPardonForm("PresidentialPardonForm");
 
-		signer.signForm(pardon);     
-		executor.executeForm(pardon);
+		signer.signForm(PresidentialPardonForm);     
+		executor.executeForm(PresidentialPardonForm);
 	}
 
-	std::cout << "\n--- Test 5: fully authorized executor ---" << std::endl;
+	std::cout << "test 5" << std::endl;
 	{
 		Bureaucrat zaphod("Zaphod", 1);
-		PresidentialPardonForm pardon("Marvin");
+		PresidentialPardonForm PresidentialPardonForm("PresidentialPardonForm");
 
-		zaphod.signForm(pardon);
-		zaphod.executeForm(pardon);
+		zaphod.signForm(PresidentialPardonForm);
+		zaphod.executeForm(PresidentialPardonForm);
 	}
 
 	return 0;

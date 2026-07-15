@@ -29,47 +29,45 @@ Intern::~Intern()
 	std::cout << "Intern destructor called" << std::endl;
 }
 
-static AForm* createShrubberyCreationForm(const std::string& target)
+static AForm* makeShrubbery(const std::string& target)
 {
-	return new ShrubberyCreationForm(target);
+    return new ShrubberyCreationForm(target);
 }
 
-static AForm* createRobotomyRequestForm(const std::string& target)
+static AForm* makeRobotomy(const std::string& target)
 {
-	return new RobotomyRequestForm(target);
+    return new RobotomyRequestForm(target);
 }
 
-static AForm* createPresidentialPardonForm(const std::string& target)
+static AForm* makePardon(const std::string& target)
 {
-	return new PresidentialPardonForm(target);
+    return new PresidentialPardonForm(target);
 }
 
-
-struct FormEntry
-{
-	std::string name;
-	AForm* (*create)(const std::string& target);
+static AForm* (*makers[])(const std::string&) = {
+    makeShrubbery,
+    makeRobotomy,
+    makePardon
 };
 
 AForm* Intern::makeForm(const std::string& name, const std::string& target)
 {
-	static const FormEntry table[] = {
-		{ "shrubbery creation",  &createShrubberyCreationForm  },
-		{ "robotomy request",    &createRobotomyRequestForm    },
-		{ "presidential pardon", &createPresidentialPardonForm }
-	};
-	static const std::size_t tableSize = sizeof(table) / sizeof(table[0]);
+    const char* names[] = {
+        "shrubbery creation",
+        "robotomy request",
+        "presidential pardon"
+    };
 
-	for (std::size_t i = 0; i < tableSize; ++i)
-	{
-		if (table[i].name == name)
-		{
-			AForm* form = table[i].create(target);
-			std::cout << "Intern creates " << form->getName() << std::endl;
-			return form;
-		}
-	}
+    for (int i = 0; i < 3; i++)
+    {
+        if (names[i] == name)
+        {
+            AForm* form = makers[i](target);
+            std::cout << "Intern creates " << form->getName() << std::endl;
+            return form;
+        }
+    }
 
-	std::cerr << "Error: form \"" << name << "\" doesn't exist." << std::endl;
-	return NULL;
+    std::cout << "Error: form \"" << name << "\" doesn't exist." << std::endl;
+    return NULL;
 }

@@ -9,6 +9,11 @@ Bureaucrat::Bureaucrat(const std::string& Name, int Grade) : name(Name), grade(G
 	std::cout << "Bureaucrat constructor called" << std::endl;
 }
 
+Bureaucrat::Bureaucrat() : name("Default"), grade(150)
+{
+	std::cout << "Bureaucrat default constructor called" << std::endl;
+}
+
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat destructor called" << std::endl;

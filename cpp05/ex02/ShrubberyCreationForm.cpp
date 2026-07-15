@@ -1,6 +1,12 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
+ShrubberyCreationForm::ShrubberyCreationForm()
+	: AForm("ShrubberyCreationForm", 145, 137), target("Default Target")
+{
+	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 	: AForm("ShrubberyCreationForm", 145, 137), target(target)
 {

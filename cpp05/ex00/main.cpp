@@ -2,63 +2,71 @@
 
 int main()
 {
-    std::cout << "=== Test 1: Valid construction ===" << std::endl;
-    try {
-        Bureaucrat a("Alice", 1);
-        Bureaucrat b("Bob", 75);
-        Bureaucrat c("Charlie", 150);
+    std::cout << "test 1" << std::endl;
+    try
+    {
+        Bureaucrat a("Bureaucrat", 1);
         std::cout << a << std::endl;
-        std::cout << b << std::endl;
-        std::cout << c << std::endl;
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cout << "Unexpected: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== Test 2: Grade too high (0) ===" << std::endl;
-    try {
-        Bureaucrat bad("Bad", 0);
+    std::cout << "test 2" << std::endl;
+    try
+    {
+        Bureaucrat bad("Bad Bureaucrat", 0);
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== Test 3: Grade too low (151) ===" << std::endl;
-    try {
-        Bureaucrat bad("Bad", 151);
+    std::cout << "test 3" << std::endl;
+    try
+    {
+        Bureaucrat bad("Bad Bureaucrat", 151);
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== Test 4: Increment boundary ===" << std::endl;
-    try {
-        Bureaucrat top("Top", 1);
-        top.incrementGrade();  // Should throw
+    std::cout << "test 4" << std::endl;
+    try
+    {
+        Bureaucrat top("Top Bureaucrat", 1);
+        top.incrementGrade();
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== Test 5: Decrement boundary ===" << std::endl;
-    try {
-        Bureaucrat bottom("Bottom", 150);
-        bottom.decrementGrade();  // Should throw
+    std::cout << "test 5" << std::endl;
+    try
+    {
+        Bureaucrat bottom("Bottom Bureaucrat", 150);
+        bottom.decrementGrade();
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== Test 6: Normal increment/decrement ===" << std::endl;
-    try {
-        Bureaucrat mid("Mid", 75);
-        std::cout << "Before: " << mid << std::endl;
-        mid.incrementGrade();
-        std::cout << "After increment: " << mid << std::endl;
-        mid.decrementGrade();
-        std::cout << "After decrement: " << mid << std::endl;
+    std::cout << "test 6" << std::endl;
+    try
+    {
+        Bureaucrat B("Bureaucrat", 75);
+        std::cout << "Before: " << B << std::endl;
+        B.incrementGrade();
+        std::cout << "After increment: " << B << std::endl;
+        B.decrementGrade();
+        std::cout << "After decrement: " << B << std::endl;
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cout << "Unexpected: " << e.what() << std::endl;
     }
 

@@ -3,7 +3,7 @@
 
 Form::Form() : name("Default Form"), isSigned(false), gradeToSign(150), gradeToExec(150)
 {
-
+    std::cout << "Form default constructor called" << std::endl;
 }
 
 Form::Form(const std::string& Name, int grade_To_Sign, int grade_To_Exec) 

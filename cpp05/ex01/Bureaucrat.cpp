@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelbouz <aelbouz@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abdelhamid <abdelhamid@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 10:02:09 by aelbouz           #+#    #+#             */
-/*   Updated: 2026/07/14 09:06:01 by aelbouz          ###   ########.fr       */
+/*   Updated: 2026/07/15 16:27:18 by abdelhamid       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ Bureaucrat::Bureaucrat(const std::string& Name, int Grade): name(Name), grade(Gr
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat destructor called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat()
+{
+    std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other): name(other.name), grade(other.grade)

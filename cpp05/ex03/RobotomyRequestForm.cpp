@@ -1,6 +1,12 @@
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
 
+RobotomyRequestForm::RobotomyRequestForm()
+	: AForm("RobotomyRequestForm", 72, 45), target("Default Target")
+{
+	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 	: AForm("RobotomyRequestForm", 72, 45), target(target)
 {
@@ -16,7 +22,10 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
 	if (this != &other)
-		AForm::operator=(other);
+    {
+        AForm::operator=(other);
+        this->target = other.target;
+    }
 	std::cout << "RobotomyRequestForm copy assignment called" << std::endl;
 	return *this;
 }

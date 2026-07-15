@@ -1,9 +1,9 @@
-NAME = intern
+NAME = forms
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp Intern.cpp \
-       ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp \
+       ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(FLAGS) $^ -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 	$(CXX) $(FLAGS) -c $< -o $@
 
 clean:

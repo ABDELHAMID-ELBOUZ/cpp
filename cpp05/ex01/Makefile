@@ -6,7 +6,7 @@ OBJS=$(SRSC:.cpp=.o)
 all:$(NAME)
 $(NAME):$(OBJS)
 	$(C) $(FLAGS) $^ -o $(NAME)
-%.o:%.cpp Bureaucrat.hpp Form.hpp
+%.o:%.cpp Bureaucrat.hpp Form.hpp 
 	$(C) $(FLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJS)
