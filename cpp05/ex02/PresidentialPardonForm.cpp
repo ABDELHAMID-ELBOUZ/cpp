@@ -15,7 +15,10 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& oth
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
 	if (this != &other)
-		AForm::operator=(other);
+    {
+        AForm::operator=(other);
+        this->target = other.target;
+    }
 	std::cout << "PresidentialPardonForm copy assignment called" << std::endl;
 	return *this;
 }
