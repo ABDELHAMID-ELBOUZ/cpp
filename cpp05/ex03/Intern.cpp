@@ -44,18 +44,18 @@ static AForm* makePardon(const std::string& target)
     return new PresidentialPardonForm(target);
 }
 
-static AForm* (*makers[])(const std::string&) = {
-    makeShrubbery,
-    makeRobotomy,
-    makePardon
-};
-
 AForm* Intern::makeForm(const std::string& name, const std::string& target)
 {
     const char* names[] = {
         "shrubbery creation",
         "robotomy request",
         "presidential pardon"
+    };
+
+    AForm* (*makers[])(const std::string&) = {
+        makeShrubbery,
+        makeRobotomy,
+        makePardon
     };
 
     for (int i = 0; i < 3; i++)

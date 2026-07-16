@@ -7,7 +7,7 @@
 
 int main()
 {
-	std::srand(static_cast<unsigned int>(std::time(NULL)));
+	std::srand(std::time(NULL));
 
 	std::cout << "test 1" << std::endl;
 	{
