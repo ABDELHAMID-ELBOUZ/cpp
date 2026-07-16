@@ -39,7 +39,7 @@ int main()
 	delete rrf;
 	delete scf;
 	delete ppf;
-	delete bad; // safe: delete on NULL is a no-op
+	delete bad;
 
 	return 0;
 }
