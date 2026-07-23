@@ -210,7 +210,7 @@ void ScalarConverter::printChar(int c)
 {
 	if (c < 0 || c > 127)
             std::cout << "char: impossible" << std::endl;
-    if (std::isprint(c))
+    else if (std::isprint(c))
         std::cout << "char: '" << static_cast<char>(c) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
