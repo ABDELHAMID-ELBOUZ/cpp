@@ -4,57 +4,64 @@
 #include <exception>
 
 template<typename T>
-class Array {
+class Array
+{
 	private:
-		T* _data;
-		unsigned int _size;
+		T* Data;
+		unsigned int Size;
 
 	public:
-		Array() : _data(NULL), _size(0) {}
-
-		Array(unsigned int n) : _data(new T[n]()), _size(n) {}
-
-		Array(Array const& other) : _data(new T[other._size]()), _size(other._size)
+		Array() : Data(NULL), Size(0)
 		{
-			for (unsigned int i = 0; i < _size; ++i)
-				_data[i] = other._data[i];
+
+		}
+
+		Array(unsigned int n) : Data(new T[n]()), Size(n)
+		{
+			
+		}
+
+		Array(Array const& other) : Data(new T[other.Size]()), Size(other.Size)
+		{
+			for (unsigned int i = 0; i < Size; ++i)
+				Data[i] = other.Data[i];
 		}
 
 		Array& operator=(Array const& other)
 		{
 			if (this != &other)
 			{
-				delete[] _data;
-				_data = new T[other._size]();
-				_size = other._size;
-				for (unsigned int i = 0; i < _size; ++i)
-					_data[i] = other._data[i];
+				delete[] Data;
+				Data = new T[other.Size]();
+				Size = other.Size;
+				for (unsigned int i = 0; i < Size; ++i)
+					Data[i] = other.Data[i];
 			}
 			return *this;
 		}
 
 		~Array()
 		{
-			delete[] _data;
+			delete[] Data;
 		}
 
 		T& operator[](unsigned int i)
 		{
-			if (i >= _size)
+			if (i >= Size)
 				throw std::exception();
-			return _data[i];
+			return Data[i];
 		}
 
 		T const& operator[](unsigned int i) const
 		{
-			if (i >= _size)
+			if (i >= Size)
 				throw std::exception();
-			return _data[i];
+			return Data[i];
 		}
 
 		unsigned int size() const
 		{
-			return _size;
+			return Size;
 		}
 };
 

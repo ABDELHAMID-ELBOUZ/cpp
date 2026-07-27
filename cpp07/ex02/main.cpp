@@ -11,10 +11,11 @@ int main()
     Array<int> b(a);
     a[0] = 99;
 
-    std::cout << "a[0] = " << a[0] << ", b[0] = " << b[0] << std::endl;
+    std::cout << "a[0] = " << a[0] << "\nb[0] = " << b[0] << std::endl;
 
-    try {
-        a[10] = 0;
+    try
+	{
+        a[3] = 0;
     }
 	catch (std::exception&)
 	{
