@@ -21,13 +21,13 @@ class Array
 			
 		}
 
-		Array(Array const& other) : Data(new T[other.Size]()), Size(other.Size)
+		Array(const Array& other) : Data(new T[other.Size]()), Size(other.Size)
 		{
 			for (unsigned int i = 0; i < Size; ++i)
 				Data[i] = other.Data[i];
 		}
 
-		Array& operator=(Array const& other)
+		Array& operator=(const Array& other)
 		{
 			if (this != &other)
 			{
@@ -52,7 +52,7 @@ class Array
 			return Data[i];
 		}
 
-		T const& operator[](unsigned int i) const
+		const T& operator[](unsigned int i) const
 		{
 			if (i >= Size)
 				throw std::exception();

@@ -4,9 +4,9 @@
 #include <cstddef>
 
 template<typename T, typename F>
-void iter(T* arr, std::size_t const len, F func)
+void iter(T* arr, size_t const len, F func)
 {
-    for (std::size_t i = 0; i < len; ++i)
+    for (size_t i = 0; i < len; ++i)
         func(arr[i]);
 }
 

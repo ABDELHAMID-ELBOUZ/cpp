@@ -3,7 +3,7 @@
 #include <cctype>
 #include "iter.hpp"
 
-void printInt(int const& n)
+void printInt(const int& n)
 {
     std::cout << n << " ";
 }

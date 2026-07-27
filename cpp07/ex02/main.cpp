@@ -15,7 +15,7 @@ int main()
 
     try
 	{
-        a[3] = 0;
+        a[1] = 0;
     }
 	catch (std::exception&)
 	{
