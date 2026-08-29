@@ -33,8 +33,8 @@ class Span
 
 			_data.insert(_data.end(), begin, end);
 		}
-		int shortestSpan() const;
-		int longestSpan() const;
+		long shortestSpan() const;
+		long longestSpan() const;
 		unsigned int size() const;
 		unsigned int maxSize() const;
 };

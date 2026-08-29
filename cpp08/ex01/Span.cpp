@@ -35,7 +35,7 @@ void Span::addNumber(int n)
 }
 
 
-int Span::shortestSpan() const
+long Span::shortestSpan() const
 {
     if (_data.size() < 2)
         throw std::runtime_error("Not enough elements to calculate span");
@@ -49,7 +49,7 @@ int Span::shortestSpan() const
     return *std::min_element(diffs.begin() + 1, diffs.end());
 }
 
-int Span::longestSpan() const
+long Span::longestSpan() const
 {
     if (_data.size() < 2)
         throw std::runtime_error("Not enough elements to calculate span");
