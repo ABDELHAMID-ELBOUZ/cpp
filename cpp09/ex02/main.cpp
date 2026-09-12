@@ -73,7 +73,6 @@ int main(int argc, char** argv)
     std::cout << "Before: ";
     printSequence(vec);
 
-    /* ---------- Vector sort ---------- */
     long start = getTime();
     PmergeMe::sortVector(vec);
     long end = getTime();
@@ -84,7 +83,6 @@ int main(int argc, char** argv)
               << " elements with std::vector : " << std::fixed << std::setprecision(5)
               << vecTime << " us" << std::endl;
 
-    /* ---------- Deque sort ---------- */
     start = getTime();
     PmergeMe::sortDeque(deq);
     end = getTime();

@@ -19,7 +19,6 @@ PmergeMe::~PmergeMe()
 
 }
 
-/* ---------- Vector implementation ---------- */
 static void mergeInsertVector(std::vector<int>& v)
 {
     if (v.size() <= 1) return;
@@ -45,9 +44,9 @@ static void mergeInsertVector(std::vector<int>& v)
     std::vector<int> mainVec;
     for (size_t j = 0; j < pairs.size(); ++j)
         mainVec.push_back(pairs[j].first);
-    mergeInsertVector(mainVec);               // recursive sort of main chain
+    mergeInsertVector(mainVec);
 
-    std::sort(pairs.begin(), pairs.end());    // reorder pairs according to sorted main
+    std::sort(pairs.begin(), pairs.end());
 
     std::vector<int> main;
     std::vector<int> pend;
@@ -57,7 +56,6 @@ static void mergeInsertVector(std::vector<int>& v)
         pend.push_back(pairs[j].second);
     }
 
-    // Build Jacobsthal insertion order
     std::vector<int> order;
     if (!pend.empty())
 	{
@@ -77,7 +75,6 @@ static void mergeInsertVector(std::vector<int>& v)
         }
     }
 
-    // Insert pend elements into main chain
     for (size_t k = 0; k < order.size(); ++k)
 	{
         int idx = order[k];
@@ -95,7 +92,6 @@ static void mergeInsertVector(std::vector<int>& v)
     v = main;
 }
 
-/* ---------- Deque implementation ---------- */
 static void mergeInsertDeque(std::deque<int>& d)
 {
     if (d.size() <= 1) return;
@@ -121,9 +117,9 @@ static void mergeInsertDeque(std::deque<int>& d)
     std::deque<int> mainDeq;
     for (size_t j = 0; j < pairs.size(); ++j)
         mainDeq.push_back(pairs[j].first);
-    mergeInsertDeque(mainDeq);                // recursive sort of main chain
+    mergeInsertDeque(mainDeq);
 
-    std::sort(pairs.begin(), pairs.end());    // reorder pairs
+    std::sort(pairs.begin(), pairs.end());
 
     std::deque<int> main;
     std::deque<int> pend;
